@@ -71,7 +71,7 @@ try:
             t_li=["Advanced_courses","Test_scores","Equity_overview","Race_ethnicity","Low-income_students","Students_with_Disabilities","Students","College_readiness","College_success"]
 
             ad_course=[]
-            for page in range(120,177):
+            for page in range(120,140):
                 print(page)
                 url = "https://www.greatschools.org/texas/schools/?gradeLevels%5B%5D="+cl[num]+"&page="+str(page)+"&view=table"
                 
