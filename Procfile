@@ -1,1 +1,1 @@
-web: gunicorn djangochat.wsgi --log-file -
+worker: python scrap_details.py
