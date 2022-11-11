@@ -8,9 +8,6 @@ import time
 import re
 import json
 import pandas as pd
-from apikey import *
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import (Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId)
 options = Options()
 options.headless = True
 from collections import Counter
