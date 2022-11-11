@@ -494,64 +494,10 @@ try:
       
     data = pd.DataFrame({col1:d1,col2:d2,col3:d3,col4:d4,col5:d5,col6:d6,col7:d7,col8:d8,col9:d9,col10:d10,col11:d11,col12:d12,col13:d13,col14:d14,col15:d15,col16:d16,col17:d17,col18:d18,col19:d19,col20:d20,col21:d21,col22:d22})
     data.to_excel(r'sample_data_main_texas_3_2'+'.xlsx', sheet_name='sheet1', index=False)
-    file_path = "sample_data_main_texas_3_2.xlsx"
-    df.to_csv(file_path)
-
-    with open(file_path, 'rb') as f:
-        data = f.read()
-        f.close()
-
-    encoded = base64.b64encode(data).decode()
-    message = Mail(
-    from_email=FROM_EMAIL,
-    to_emails=TO_EMAIL,
-    subject='Your File is Ready',
-    html_content='<strong>Attached is Your Scraped File</strong>')
-    attachment = Attachment()
-    attachment.file_content = FileContent(encoded)
-    attachment.file_type = FileType('text/csv')
-    attachment.file_name = FileName('scraped.csv')
-    attachment.disposition = Disposition('attachment')
-    attachment.content_id = ContentId('Example Content ID')
-    message.attachment = attachment
-    try:
-        sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-    except Exception as e:
-         print(e)
+    
 except:
     
     print(len(d1),len(d2),len(d3),len(d4),len(d5),len(d6),len(d7),len(d8),len(d9),len(d10),len(d11),len(d12),len(d13),len(d14),len(d15),len(d16),len(d17),len(d18),len(d19),len(d20),len(d21),len(d22))
     data = pd.DataFrame({col1:d1,col2:d2,col3:d3,col4:d4,col5:d5,col6:d6,col7:d7,col8:d8,col9:d9,col10:d10,col11:d11,col12:d12,col13:d13,col14:d14,col15:d15,col16:d16,col17:d17,col18:d18,col19:d19,col20:d20,col21:d21,col22:d22})
     data.to_excel(r'sample_data_main_texas_3_2'+'.xlsx', sheet_name='sheet1', index=False) 
-    file_path = "sample_data_main_texas_3_2.xlsx"
-    df.to_csv(file_path)
-
-    with open(file_path, 'rb') as f:
-        data = f.read()
-        f.close()
-
-    encoded = base64.b64encode(data).decode()
-    message = Mail(
-    from_email=FROM_EMAIL,
-    to_emails=TO_EMAIL,
-    subject='Your File is Ready',
-    html_content='<strong>Attached is Your Scraped File</strong>')
-    attachment = Attachment()
-    attachment.file_content = FileContent(encoded)
-    attachment.file_type = FileType('text/xlsx')
-    attachment.file_name = FileName('scraped.xlsx')
-    attachment.disposition = Disposition('attachment')
-    attachment.content_id = ContentId('Example Content ID')
-    message.attachment = attachment
-    try:
-        sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-    except Exception as e:
-         print(e)    
+    
